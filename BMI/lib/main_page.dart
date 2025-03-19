@@ -10,8 +10,64 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color:Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white, // Fixed color assignment
+      body: SafeArea(
+        child: Container(
+          color: Colors.white,
+        child:Column(
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: const [
+                    Icon(Icons.male, size:150),
+                    Text("Male"),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children:const [
+                    Icon(Icons.female, size:150),
+                    Text("Female"),
+                  ],
+                ),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: const [
+                    Icon(Icons.male, size:150),
+                    Text("Male"),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children:const [
+                    Icon(Icons.female, size:150),
+                    Text("Female"),
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+        )
+        
+      )
     );
   }
 }
