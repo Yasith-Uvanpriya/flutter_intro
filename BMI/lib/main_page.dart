@@ -43,6 +43,7 @@ class _MainPageState extends State<MainPage> {
                 )
               ],
             ),
+            const SizedBox(height: 50,),
             Row(
               children: [
                 Padding(
@@ -106,10 +107,17 @@ class _MainPageState extends State<MainPage> {
                 ),
               ],
             ),
+            const SizedBox(height: 50,),
             Column(
               children: [
-                Text("BMI"),
-                Text("22.00")
+                Text(
+                      "BMI",
+                       style: TextStyle(fontSize: 30),
+                    ),
+
+                Text("22.00",
+                style: kInputColor,
+                )
               ],
           
             )
