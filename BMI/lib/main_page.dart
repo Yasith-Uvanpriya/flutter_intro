@@ -64,6 +64,12 @@ class _MainPageState extends State<MainPage> {
                             children: [FloatingActionButton(
                               onPressed: (){
                                 setState(() {
+                                  if(Hieght>50)
+                                  Hieght--;
+                                });
+                          
+                                print("Hieght");
+                              }, 
                               child: Icon(
                                 Icons.remove, 
                               size:40,),),
