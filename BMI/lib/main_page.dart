@@ -1,3 +1,4 @@
+import 'package:bmi/constants.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -56,7 +57,7 @@ class _MainPageState extends State<MainPage> {
                       const Text(
                           "176", 
                             style: TextStyle(
-                            color: Colors.red, 
+                            color: kTextColor, 
                             fontSize: 50, 
                             fontWeight: FontWeight.bold, // Corrected placement
                           ),
@@ -86,7 +87,7 @@ class _MainPageState extends State<MainPage> {
                   children: [
                      const Text("Wieght",
                      style: TextStyle(
-                      color: Colors.black,
+                      color: kTextColor,
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                      ),
@@ -94,7 +95,7 @@ class _MainPageState extends State<MainPage> {
                       const Text(
                           "50", 
                             style: TextStyle(
-                            color: Colors.red, 
+                            color: Color(0xFFFF8888), 
                             fontSize: 50, 
                             fontWeight: FontWeight.bold, // Corrected placement
                           ),
