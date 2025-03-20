@@ -9,6 +9,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
+  int Hieght = 150;
+  int weight = 70;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,19 +56,24 @@ class _MainPageState extends State<MainPage> {
                        const Text("Hieght",
                        style: kInputLabelColor
                       ),
-                        const Text(
-                            "176", 
+                         Text(
+                            "$Hieght", 
                               style: kInputLabelColor
                           ),
                           Row(
                             children: [FloatingActionButton(
-                              onPressed: null, 
+                              onPressed: (){
+                                setState(() {
                               child: Icon(
                                 Icons.remove, 
                               size:40,),),
                               const SizedBox(width: 20,),
                               FloatingActionButton(
-                              onPressed: null, 
+                              onPressed: (){
+                                setState(() {
+                                  Hieght++;
+                                });
+                              }, 
                               child: Icon(
                                 Icons.add, 
                               size:40,),),
@@ -83,19 +91,28 @@ class _MainPageState extends State<MainPage> {
                        const Text("Wieght",
                        style: kInputLabelColor
                       ),
-                        const Text(
-                            "50", 
+                        Text(
+                            "$weight", 
                               style: kInputLabelColor
                           ),
                           Row(
                             children: [FloatingActionButton(
-                              onPressed: null, 
+                              onPressed:(){
+                                setState(() {
+                                  if(weight>0)
+                                 weight--; 
+                                });
+                              }, 
                               child: Icon(
                                 Icons.remove, 
                               size:40,),),
                               const SizedBox(width: 20,),
                               FloatingActionButton(
-                              onPressed: null, 
+                              onPressed: (){
+                                setState(() {
+                                  weight++;
+                                });
+                              }, 
                               child: Icon(
                                 Icons.add, 
                               size:40,),),
@@ -128,5 +145,8 @@ class _MainPageState extends State<MainPage> {
         
       )
     );
+  }
+  void onHeightMinus(){
+    print("h m");
   }
 }
