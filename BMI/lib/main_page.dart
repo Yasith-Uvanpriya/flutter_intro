@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: const [
-                    Icon(Icons.male, size:150),
+                    Text("176", style: TextStyle(color: Colors.red)), 
                     Text("Male"),
                   ],
                 ),
