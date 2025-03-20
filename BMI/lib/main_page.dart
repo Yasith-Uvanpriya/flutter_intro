@@ -83,12 +83,40 @@ class _MainPageState extends State<MainPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
-                  children:const [
-                    Icon(Icons.female, size:150),
-                    Text("Female"),
+                  children: [
+                     const Text("Width",
+                     style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                     ),
+                    ),
+                      const Text(
+                          "50", 
+                            style: TextStyle(
+                            color: Colors.red, 
+                            fontSize: 50, 
+                            fontWeight: FontWeight.bold, // Corrected placement
+                          ),
+                        ),
+                        Row(
+                          children: [FloatingActionButton(
+                            onPressed: null, 
+                            child: Icon(
+                              Icons.remove, 
+                            size:40,),),
+                            const SizedBox(width: 20,),
+                            FloatingActionButton(
+                            onPressed: null, 
+                            child: Icon(
+                              Icons.add, 
+                            size:40,),),
+                          ],
+
+                        )
                   ],
                 ),
-              )
+              ),
             ],
           )
         ],
