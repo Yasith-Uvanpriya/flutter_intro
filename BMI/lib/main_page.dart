@@ -45,15 +45,15 @@ class _MainPageState extends State<MainPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
-                  children: const [
-                     Text("Hieght",
+                  children: [
+                     const Text("Hieght",
                      style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                      ),
                     ),
-                   Text(
+                      const Text(
                           "176", 
                             style: TextStyle(
                             color: Colors.red, 
@@ -61,7 +61,9 @@ class _MainPageState extends State<MainPage> {
                             fontWeight: FontWeight.bold, // Corrected placement
                           ),
                         ),
-                        Row()
+                        Row(
+                          children: [FloatingActionButton(onPressed: onPressed)],
+                        )
                   ],
                 ),
               ),
