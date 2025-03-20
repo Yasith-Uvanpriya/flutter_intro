@@ -46,8 +46,22 @@ class _MainPageState extends State<MainPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: const [
-                    Text("176", style: TextStyle(color: Colors.red)), 
-                    Text("Male"),
+                     Text("Hieght",
+                     style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                     ),
+                    ),
+                   Text(
+                          "176", 
+                            style: TextStyle(
+                            color: Colors.red, 
+                            fontSize: 50, 
+                            fontWeight: FontWeight.bold, // Corrected placement
+                          ),
+                        ),
+                        Row()
                   ],
                 ),
               ),
