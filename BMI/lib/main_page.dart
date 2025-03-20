@@ -84,7 +84,7 @@ class _MainPageState extends State<MainPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                     const Text("Width",
+                     const Text("Wieght",
                      style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
@@ -118,6 +118,13 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
             ],
+          ),
+          Column(
+            children: [
+              Text("BMI"),
+              Text("22.00")
+            ],
+
           )
         ],
       ),
