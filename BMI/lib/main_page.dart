@@ -12,6 +12,8 @@ class _MainPageState extends State<MainPage> {
 
   int Hieght = 150;
   int weight = 70;
+
+  late double bmi = calculateBMI(Hieght: Hieght, weight: weight);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +68,7 @@ class _MainPageState extends State<MainPage> {
                                 setState(() {
                                   if(Hieght>50)
                                   Hieght--;
+                                  bmi = calculateBMI(Hieght: Hieght, weight: weight);
                                 });
                           
                                 print("Hieght");
@@ -78,6 +81,7 @@ class _MainPageState extends State<MainPage> {
                               onPressed: (){
                                 setState(() {
                                   Hieght++;
+                                  bmi = calculateBMI(Hieght: Hieght, weight: weight);
                                 });
                               }, 
                               child: Icon(
@@ -107,6 +111,7 @@ class _MainPageState extends State<MainPage> {
                                 setState(() {
                                   if(weight>0)
                                  weight--; 
+                                 bmi = calculateBMI(Hieght: Hieght, weight: weight);
                                 });
                               }, 
                               child: Icon(
@@ -117,6 +122,7 @@ class _MainPageState extends State<MainPage> {
                               onPressed: (){
                                 setState(() {
                                   weight++;
+                                  bmi = calculateBMI(Hieght: Hieght, weight: weight);
                                 });
                               }, 
                               child: Icon(
@@ -138,7 +144,7 @@ class _MainPageState extends State<MainPage> {
                        style: TextStyle(fontSize: 30),
                     ),
 
-                Text("22.00",
+                Text("$bmi",
                 style: kInputColor,
                 )
               ],
@@ -152,8 +158,8 @@ class _MainPageState extends State<MainPage> {
       )
     );
   }
-  double calculateBMI({required int Height, required int weight}) {
-  return weight /(Height*Hieght);
+  double calculateBMI({required int Hieght, required int weight}) {
+  return weight /(Hieght*Hieght)*1000;
 }
 
 }
