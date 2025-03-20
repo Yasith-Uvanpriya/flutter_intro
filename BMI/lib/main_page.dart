@@ -152,7 +152,8 @@ class _MainPageState extends State<MainPage> {
       )
     );
   }
-  void onHeightMinus(){
-    print("h m");
-  }
+  double calculateBMI({required int Height, required int weight}) {
+  return weight /(Height*Hieght);
+}
+
 }
