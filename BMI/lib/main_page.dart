@@ -15,7 +15,7 @@ class _MainPageState extends State<MainPage> {
       backgroundColor: Colors.white, // Fixed color assignment
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Container(
             color: Colors.white,
           child:Column(
