@@ -9,157 +9,137 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
-  int Hieght = 150;
+  int height = 150;  // Corrected variable name
   int weight = 70;
 
-  late double bmi = calculateBMI(Hieght: Hieght, weight: weight);
+  late double bmi;
+
+  @override
+  void initState() {
+    super.initState();
+    bmi = calculateBMI(height: height, weight: weight);
+  }
+
+  double calculateBMI({required int height, required int weight}) {
+    return weight / ((height / 100) * (height / 100)); // Corrected BMI formula
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Fixed color assignment
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Container(
-            color: Colors.white,
-          child:Column(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: const [
-                      Icon(Icons.male, size:150),
-                      Text("Male"),
-                    ],
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.male, size: 150),
+                        Text("Male"),
+                      ],
+                    ),
                   ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children:const [
-                      Icon(Icons.female, size:150),
-                      Text("Female"),
-                    ],
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.female, size: 150),
+                        Text("Female"),
+                      ],
+                    ),
                   ),
-                )
-              ],
-            ),
-            const SizedBox(height: 50,),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                       const Text("Hieght",
-                       style: kInputLabelColor
-                      ),
-                         Text(
-                            "$Hieght", 
-                              style: kInputLabelColor
-                          ),
-                          Row(
-                            children: [FloatingActionButton(
-                              onPressed: (){
+                ],
+              ),
+              const SizedBox(height: 50),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        const Text("Height", style: kInputLabelColor),
+                        Text("$height", style: kInputLabelColor),
+                        Row(
+                          children: [
+                            FloatingActionButton(
+                              onPressed: () {
                                 setState(() {
-                                  if(Hieght>50)
-                                  Hieght--;
-                                  bmi = calculateBMI(Hieght: Hieght, weight: weight);
+                                  if (height > 50) height--;
+                                  bmi = calculateBMI(height: height, weight: weight);
                                 });
-                          
-                                print("Hieght");
-                              }, 
-                              child: Icon(
-                                Icons.remove, 
-                              size:40,),),
-                              const SizedBox(width: 20,),
-                              FloatingActionButton(
-                              onPressed: (){
+                              },
+                              child: const Icon(Icons.remove, size: 40),
+                            ),
+                            const SizedBox(width: 20),
+                            FloatingActionButton(
+                              onPressed: () {
                                 setState(() {
-                                  Hieght++;
-                                  bmi = calculateBMI(Hieght: Hieght, weight: weight);
+                                  height++;
+                                  bmi = calculateBMI(height: height, weight: weight);
                                 });
-                              }, 
-                              child: Icon(
-                                Icons.add, 
-                              size:40,),),
-                            ],
-          
-                          )
-                    ],
+                              },
+                              child: const Icon(Icons.add, size: 40),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                       const Text("Wieght",
-                       style: kInputLabelColor
-                      ),
-                        Text(
-                            "$weight", 
-                              style: kInputLabelColor
-                          ),
-                          Row(
-                            children: [FloatingActionButton(
-                              onPressed:(){
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        const Text("Weight", style: kInputLabelColor),
+                        Text("$weight", style: kInputLabelColor),
+                        Row(
+                          children: [
+                            FloatingActionButton(
+                              onPressed: () {
                                 setState(() {
-                                  if(weight>0)
-                                 weight--; 
-                                 bmi = calculateBMI(Hieght: Hieght, weight: weight);
+                                  if (weight > 0) weight--;
+                                  bmi = calculateBMI(height: height, weight: weight);
                                 });
-                              }, 
-                              child: Icon(
-                                Icons.remove, 
-                              size:40,),),
-                              const SizedBox(width: 20,),
-                              FloatingActionButton(
-                              onPressed: (){
+                              },
+                              child: const Icon(Icons.remove, size: 40),
+                            ),
+                            const SizedBox(width: 20),
+                            FloatingActionButton(
+                              onPressed: () {
                                 setState(() {
                                   weight++;
-                                  bmi = calculateBMI(Hieght: Hieght, weight: weight);
+                                  bmi = calculateBMI(height: height, weight: weight);
                                 });
-                              }, 
-                              child: Icon(
-                                Icons.add, 
-                              size:40,),),
-                            ],
-          
-                          )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 50,),
-            Column(
-              children: [
-                Text(
-                      "BMI",
-                       style: TextStyle(fontSize: 30),
+                              },
+                              child: const Icon(Icons.add, size: 40),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
-
-                Text("$bmi",
-                style: kInputColor,
-                )
-              ],
-          
-            )
-          ],
-                ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 50),
+              Column(
+                children: [
+                  const Text("BMI", style: TextStyle(fontSize: 30)),
+                  Text(
+                    bmi.toStringAsFixed(2), // Convert BMI to 2 decimal places
+                    style: kInputColor,
+                  ),
+                ],
+              ),
+            ],
           ),
-        )
-        
-      )
+        ),
+      ),
     );
   }
-  double calculateBMI({required int Hieght, required int weight}) {
-  return weight /(Hieght*Hieght)*1000;
-}
-
 }
