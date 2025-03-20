@@ -14,121 +14,108 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: Colors.white, // Fixed color assignment
       body: SafeArea(
-        child: Container(
-          color: Colors.white,
-        child:Column(
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: const [
-                    Icon(Icons.male, size:150),
-                    Text("Male"),
-                  ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            color: Colors.white,
+          child:Column(
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: const [
+                      Icon(Icons.male, size:150),
+                      Text("Male"),
+                    ],
+                  ),
                 ),
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children:const [
-                    Icon(Icons.female, size:150),
-                    Text("Female"),
-                  ],
-                ),
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                     const Text("Hieght",
-                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                     ),
-                    ),
-                      const Text(
-                          "176", 
-                            style: TextStyle(
-                            color: kTextColor, 
-                            fontSize: 50, 
-                            fontWeight: FontWeight.bold, // Corrected placement
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children:const [
+                      Icon(Icons.female, size:150),
+                      Text("Female"),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                       const Text("Hieght",
+                       style: kInputLabelColor
+                      ),
+                        const Text(
+                            "176", 
+                              style: kInputLabelColor
                           ),
-                        ),
-                        Row(
-                          children: [FloatingActionButton(
-                            onPressed: null, 
-                            child: Icon(
-                              Icons.remove, 
-                            size:40,),),
-                            const SizedBox(width: 20,),
-                            FloatingActionButton(
-                            onPressed: null, 
-                            child: Icon(
-                              Icons.add, 
-                            size:40,),),
-                          ],
-
-                        )
-                  ],
+                          Row(
+                            children: [FloatingActionButton(
+                              onPressed: null, 
+                              child: Icon(
+                                Icons.remove, 
+                              size:40,),),
+                              const SizedBox(width: 20,),
+                              FloatingActionButton(
+                              onPressed: null, 
+                              child: Icon(
+                                Icons.add, 
+                              size:40,),),
+                            ],
+          
+                          )
+                    ],
+                  ),
                 ),
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                     const Text("Wieght",
-                     style: TextStyle(
-                      color: kTextColor,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                     ),
-                    ),
-                      const Text(
-                          "50", 
-                            style: TextStyle(
-                            color: Color(0xFFFF8888), 
-                            fontSize: 50, 
-                            fontWeight: FontWeight.bold, // Corrected placement
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                       const Text("Wieght",
+                       style: kInputLabelColor
+                      ),
+                        const Text(
+                            "50", 
+                              style: kInputLabelColor
                           ),
-                        ),
-                        Row(
-                          children: [FloatingActionButton(
-                            onPressed: null, 
-                            child: Icon(
-                              Icons.remove, 
-                            size:40,),),
-                            const SizedBox(width: 20,),
-                            FloatingActionButton(
-                            onPressed: null, 
-                            child: Icon(
-                              Icons.add, 
-                            size:40,),),
-                          ],
-
-                        )
-                  ],
+                          Row(
+                            children: [FloatingActionButton(
+                              onPressed: null, 
+                              child: Icon(
+                                Icons.remove, 
+                              size:40,),),
+                              const SizedBox(width: 20,),
+                              FloatingActionButton(
+                              onPressed: null, 
+                              child: Icon(
+                                Icons.add, 
+                              size:40,),),
+                            ],
+          
+                          )
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
+            Column(
+              children: [
+                Text("BMI"),
+                Text("22.00")
+              ],
+          
+            )
+          ],
+                ),
           ),
-          Column(
-            children: [
-              Text("BMI"),
-              Text("22.00")
-            ],
-
-          )
-        ],
-      ),
         )
         
       )
