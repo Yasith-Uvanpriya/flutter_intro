@@ -5,3 +5,9 @@ const kInputLabelColor =TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                      );
+
+const kInputColor =TextStyle(
+                      color: Color.fromARGB(255, 184, 53, 53),
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                     );
