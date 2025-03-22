@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-const kTextColor =  Color(0xFFFF8888);
+const kTextColor =  Color.fromARGB(255, 34, 5, 95);
 const kInputLabelColor =TextStyle(
-                      color: kTextColor,
+                      color: Color.fromARGB(255, 3, 35, 65),
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                      );
