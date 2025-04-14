@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
+          child: Column( 
             children: [
               Row(
                 children: [
@@ -60,7 +60,7 @@ class _MainPageState extends State<MainPage> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       children: [
                         const Text("Height", style: kInputLabelColor),
